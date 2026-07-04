@@ -18,6 +18,11 @@
     "--security-opt",
     "label=disable"
   ],
+  // Bind-mount the host repo's custom_components into the HA config dir so the
+  // two stay in sync (single physical copy on the Windows host).
+  "mounts": [
+    "source=C:/workspace/ha-custom-components,target=/workspaces/core/config/custom_components,type=bind"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
