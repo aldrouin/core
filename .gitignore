@@ -145,3 +145,7 @@ pytest_buckets.txt
 .claude/worktrees/
 .serena/
 
+.devcontainer/devcontainer-lock.json
+
+# local symlink to config/custom_components (dev convenience)
+/custom_components
