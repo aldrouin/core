@@ -18,10 +18,12 @@
     "--security-opt",
     "label=disable"
   ],
-  // Bind-mount the host repo's custom_components into the HA config dir so the
-  // two stay in sync (single physical copy on the Windows host).
+  // Bind-mount each standalone integration repo's component folder into the HA
+  // config dir so edits in the repo are loaded live. Adjust the host source paths
+  // to wherever the repos are cloned on the host, then rebuild the container.
   "mounts": [
-    "source=C:/workspace/ha-custom-components,target=/workspaces/core/config/custom_components,type=bind"
+    "source=C:/workspace/kydax_dimmer/custom_components/kydax_dimmer,target=/workspaces/core/config/custom_components/kydax_dimmer,type=bind",
+    "source=C:/workspace/kydax_symetrix/custom_components/kydax_symetrix,target=/workspaces/core/config/custom_components/kydax_symetrix,type=bind"
   ],
   "customizations": {
     "vscode": {
